@@ -3,107 +3,102 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CFC Modelo | Autoescola em Felipe Camarão, Natal</title>
+<title>CFC Modelo | Autoescola Futurista em Natal</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --cream:#FBF6F0;
-    --ink:#1C1A19;
-    --coral:#E8634B;
-    --coral-deep:#C94B36;
-    --enamel:#1A2E40; /* Azul escuro oficial do trânsito */
-    --enamel-light:#2A445C;
-    --sand:#D9CFC2;
-    --sand-light:#EFE7DB;
-    --white:#FFFFFF;
+    --bg-dark: #06080a;
+    --bg-card: #0f1318;
+    --sinal-verde: #00E676; /* Verde farol aceso */
+    --sinal-amarelo: #FFD600; /* Amarelo atenção */
+    --sinal-laranja: #FF5252; /* Laranja cone de trânsito */
+    --texto-neon: #E0E6ED;
+    --borda: #1e252f;
+    --white: #FFFFFF;
   }
 
   *{margin:0;padding:0;box-sizing:border-box;}
-
   html{scroll-behavior:smooth;}
 
   body{
-    background:var(--cream);
-    color:var(--ink);
-    font-family:'Inter',sans-serif;
-    line-height:1.5;
+    background:var(--bg-dark);
+    color:var(--texto-neon);
+    font-family:'Plus Jakarta Sans', sans-serif;
+    line-height:1.6;
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
   }
 
-  h1,h2,h3,.display{
-    font-family:'Fraunces',serif;
-    font-weight:600;
-    letter-spacing:-0.01em;
+  h1,h2,h3{
+    font-family:'Orbitron', sans-serif;
+    font-weight:700;
+    letter-spacing:1px;
   }
 
   a{color:inherit;text-decoration:none;}
 
-  img{max-width:100%;display:block;}
-
-  .wrap{
-    max-width:1120px;
-    margin:0 auto;
-    padding:0 28px;
-  }
-
-  /* ===== TOPO ===== */
+  /* ===== TOPO NEON ===== */
   .topbar{
     position:fixed;
     top:0;left:0;right:0;
     z-index:50;
-    background:rgba(251,246,240,0.92);
-    backdrop-filter:blur(8px);
-    border-bottom:1px solid var(--sand);
+    background:rgba(6, 8, 10, 0.85);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--borda);
   }
   .topbar .wrap{
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding-top:16px;
-    padding-bottom:16px;
+    padding:16px 28px;
+    max-width:1120px;
+    margin:0 auto;
   }
   .brand{
     display:flex;
     align-items:center;
     gap:10px;
-    font-family:'Fraunces',serif;
-    font-weight:600;
-    font-size:1.3rem;
-    color:var(--enamel);
-  }
-  .brand span{
-    color:var(--coral);
-    font-weight:700;
-  }
-  .brand-mark{
-    width:32px;height:32px;
-    flex-shrink:0;
-  }
-  .topbar-cta{
-    background:var(--enamel);
+    font-family:'Orbitron', sans-serif;
+    font-weight:900;
+    font-size:1.4rem;
     color:var(--white);
-    padding:10px 20px;
-    border-radius:100px;
-    font-size:0.85rem;
-    font-weight:600;
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    transition:transform .2s ease, background .2s ease;
+    text-shadow: 0 0 10px rgba(0, 230, 118, 0.3);
   }
-  .topbar-cta:hover{background:var(--enamel-light);transform:translateY(-1px);}
+  .brand span{ color:var(--sinal-amarelo); }
+  .topbar-cta{
+    background:transparent;
+    color:var(--sinal-verde);
+    border: 1px solid var(--sinal-verde);
+    padding:10px 20px;
+    border-radius:8px;
+    font-size:0.85rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    transition: 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 230, 118, 0.1);
+  }
+  .topbar-cta:hover{
+    background:var(--sinal-verde);
+    color:var(--bg-dark);
+    box-shadow: 0 0 20px rgba(0, 230, 118, 0.4);
+  }
 
-  /* ===== HERO ===== */
+  /* ===== HERO FUTURISTA ===== */
   .hero{
-    padding:148px 0 90px;
+    padding:160px 0 90px;
     position:relative;
+  }
+  .wrap{
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 28px;
   }
   .hero-grid{
     display:grid;
-    grid-template-columns:1.05fr 0.95fr;
+    grid-template-columns:1.1fr 0.9fr;
     gap:56px;
     align-items:center;
   }
@@ -111,32 +106,26 @@
     display:inline-flex;
     align-items:center;
     gap:8px;
-    font-size:0.78rem;
+    font-size:0.75rem;
     font-weight:700;
-    letter-spacing:0.08em;
+    letter-spacing:0.15em;
     text-transform:uppercase;
-    color:var(--enamel);
+    color:var(--sinal-amarelo);
     margin-bottom:22px;
   }
-  .eyebrow::before{
-    content:'';
-    width:7px;height:7px;
-    border-radius:50%;
-    background:var(--coral);
-    display:inline-block;
-  }
   .hero h1{
-    font-size:clamp(2.4rem, 4.6vw, 3.6rem);
-    line-height:1.06;
-    color:var(--ink);
+    font-size:clamp(2.2rem, 4.5vw, 3.4rem);
+    line-height:1.1;
+    color:var(--white);
   }
   .hero h1 em{
-    font-style:italic;
-    color:var(--coral-deep);
+    font-style:normal;
+    color:var(--sinal-verde);
+    text-shadow: 0 0 15px rgba(0, 230, 118, 0.3);
   }
   .hero p.lede{
-    font-size:1.08rem;
-    color:#5C5349;
+    font-size:1.05rem;
+    color:#94a3b8;
     max-width:480px;
     margin-top:22px;
   }
@@ -147,475 +136,82 @@
     flex-wrap:wrap;
   }
   .btn-primary{
-    background:var(--coral);
+    background:var(--sinal-laranja);
     color:var(--white);
     padding:16px 28px;
-    border-radius:100px;
+    border-radius:8px;
     font-weight:700;
-    font-size:0.95rem;
+    text-transform:uppercase;
+    font-size:0.9rem;
+    letter-spacing:1px;
     display:inline-flex;
     align-items:center;
     gap:10px;
-    box-shadow:0 8px 24px -8px rgba(232,99,75,0.55);
-    transition:transform .2s ease, box-shadow .2s ease;
+    box-shadow:0 0 20px rgba(232,99,75,0.3);
+    transition: 0.2s ease;
   }
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px -8px rgba(232,99,75,0.6);}
+  .btn-primary:hover{
+    transform:translateY(-2px);
+    box-shadow:0 0 25px rgba(232,99,75,0.5);
+  }
   .btn-secondary{
-    border:1.5px solid var(--ink);
-    color:var(--ink);
+    border:1px solid var(--borda);
+    color:var(--white);
     padding:15px 26px;
-    border-radius:100px;
+    border-radius:8px;
     font-weight:600;
     font-size:0.95rem;
+    background: rgba(255,255,255,0.02);
   }
-  .hero-trust{
-    margin-top:30px;
-    display:flex;
-    align-items:center;
-    gap:14px;
-    font-size:0.82rem;
-    color:#6B6258;
-  }
-  .stars{color:var(--coral-deep);letter-spacing:1px;}
 
-  /* CARD ALUNO */
-  .smile-card{
-    position:relative;
-    background:var(--white);
-    border-radius:22px;
+  /* PAINEL HUD CYBER */
+  .cyber-panel{
+    background:var(--bg-card);
+    border:1px solid var(--borda);
+    border-radius:18px;
     padding:26px;
-    box-shadow:0 30px 60px -20px rgba(43,38,34,0.18);
-    transform:rotate(1.2deg);
+    position:relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
   }
-  .smile-card-tag{
-    position:absolute;
-    top:-14px;
-    left:26px;
-    background:var(--enamel);
-    color:var(--white);
-    font-size:0.7rem;
-    font-weight:700;
-    letter-spacing:0.06em;
-    text-transform:uppercase;
-    padding:7px 14px;
-    border-radius:100px;
+  .cyber-panel::before {
+    content: 'SYSTEM ACTIVE';
+    position: absolute;
+    top: 12px; right: 20px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.65rem;
+    color: var(--sinal-verde);
+    letter-spacing: 1px;
   }
-  .smile-card img{
-    border-radius:14px;
+  .cyber-panel img{
+    border-radius:10px;
     width:100%;
     aspect-ratio:4/3;
     object-fit:cover;
+    border: 1px solid #2d3748;
   }
-  .smile-card-footer{
+  .panel-footer{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    margin-top:16px;
-    padding-top:16px;
-    border-top:1px dashed var(--sand);
+    margin-top:20px;
   }
-  .smile-card-footer .label{
-    font-size:0.72rem;
-    color:#8A8074;
+  .panel-footer .label{
+    font-size:0.7rem;
+    color:#64748b;
     text-transform:uppercase;
-    letter-spacing:0.05em;
+    letter-spacing:0.1em;
   }
-  .smile-card-footer .value{
-    font-family:'Fraunces',serif;
-    font-weight:600;
+  .panel-footer .value{
+    font-family:'Orbitron', sans-serif;
     font-size:1.1rem;
-    color:var(--enamel);
+    color:var(--sinal-amarelo);
   }
-  .floating-pill{
-    position:absolute;
-    background:var(--white);
-    border-radius:16px;
-    padding:12px 16px;
-    box-shadow:0 16px 32px -12px rgba(43,38,34,0.2);
-    font-size:0.8rem;
-    font-weight:600;
-    display:flex;
-    align-items:center;
-    gap:8px;
-  }
-  .pill-1{bottom:-22px;right:-18px;}
-  .pill-1 .dot{width:8px;height:8px;border-radius:50%;background:var(--coral);}
 
-  /* ===== MARQUEE ===== */
+  /* ===== STRIP / MARQUEE ===== */
   .strip{
-    background:var(--enamel);
-    color:var(--sand-light);
-    padding:16px 0;
-    overflow:hidden;
-    white-space:nowrap;
-    border-top:1px solid rgba(255,255,255,0.08);
-    border-bottom:1px solid rgba(255,255,255,0.08);
-  }
-  .strip-inner{
-    display:inline-flex;
-    animation:scroll 28s linear infinite;
-  }
-  .strip-inner span{
-    font-size:0.85rem;
-    font-weight:600;
-    letter-spacing:0.04em;
-    padding:0 28px;
-    text-transform:uppercase;
-  }
-  .strip-inner span::after{content:'•';margin-left:28px;color:var(--coral);}
-  @keyframes scroll{
-    0%{transform:translateX(0);}
-    100%{transform:translateX(-50%);}
-  }
-
-  /* ===== SECTION HEADER GENERIC ===== */
-  .section{padding:90px 0;}
-  .section-head{
-    max-width:560px;
-    margin-bottom:52px;
-  }
-  .section-head .eyebrow{margin-bottom:16px;}
-  .section-head h2{
-    font-size:clamp(1.8rem, 3vw, 2.4rem);
-    line-height:1.12;
-  }
-  .section-head p{
-    color:#5C5349;
-    margin-top:14px;
-    font-size:1.02rem;
-  }
-
-  /* ===== COMPONENTES DE ENSINO ===== */
-  .transform-section{background:var(--sand-light);}
-  .transform-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:22px;
-  }
-  .transform-card{
-    background:var(--white);
-    border-radius:18px;
-    overflow:hidden;
-    box-shadow:0 10px 30px -14px rgba(43,38,34,0.14);
-  }
-  .transform-card .imgwrap{
-    position:relative;
-    aspect-ratio:1/1;
-    overflow:hidden;
-  }
-  .transform-card img{
-    width:100%;height:100%;object-fit:cover;
-  }
-  .transform-card .imgwrap .badge{
-    position:absolute;
-    top:12px;left:12px;
-    background:rgba(43,38,34,0.78);
-    color:var(--white);
-    font-size:0.68rem;
-    font-weight:700;
-    text-transform:uppercase;
-    letter-spacing:0.05em;
-    padding:5px 10px;
-    border-radius:100px;
-  }
-  .transform-card .caption{
-    padding:16px 18px 20px;
-  }
-  .transform-card .caption .proc{
-    font-weight:700;
-    font-size:0.95rem;
-    color:var(--ink);
-  }
-  .transform-card .caption .meta{
-    font-size:0.8rem;
-    color:#8A8074;
-    margin-top:3px;
-  }
-
-  /* ===== CATEGORIAS E SERVIÇOS ===== */
-  .services-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
-  }
-  .service-card{
-    background:var(--white);
-    border:1px solid var(--sand);
-    border-radius:18px;
-    padding:30px 26px;
-    transition:transform .25s ease, border-color .25s ease;
-  }
-  .service-card:hover{
-    transform:translateY(-4px);
-    border-color:var(--coral);
-  }
-  .service-icon{
-    width:42px;height:42px;
-    color:var(--enamel);
-    margin-bottom:18px;
-  }
-  .service-card h3{
-    font-size:1.12rem;
-    font-weight:600;
-    margin-bottom:8px;
-  }
-  .service-card p{
-    font-size:0.9rem;
-    color:#6B6258;
-  }
-
-  /* ===== SOBRE NÓS ===== */
-  .about-section .wrap{
-    display:grid;
-    grid-template-columns:0.85fr 1.15fr;
-    gap:60px;
-    align-items:center;
-  }
-  .about-photo{
-    position:relative;
-  }
-  .about-photo img{
-    border-radius:20px;
-    aspect-ratio:3/4;
-    object-fit:cover;
-    width:100%;
-  }
-  .about-photo-tag{
-    position:absolute;
-    bottom:-18px;
-    left:-18px;
-    background:var(--coral);
-    color:var(--white);
-    padding:14px 18px;
-    border-radius:14px;
-    font-family:'Fraunces',serif;
-    font-weight:600;
-    font-size:0.95rem;
-    box-shadow:0 14px 28px -10px rgba(232,99,75,0.5);
-  }
-  .about-text p{
-    color:#5C5349;
-    margin-top:16px;
-    font-size:1rem;
-  }
-  .about-cred{
-    display:inline-block;
-    margin-top:24px;
-    font-size:0.82rem;
-    color:var(--enamel);
-    font-weight:700;
-    letter-spacing:0.03em;
-    background:var(--sand-light);
-    padding:8px 14px;
-    border-radius:100px;
-  }
-
-  /* ===== DEPOIMENTOS ===== */
-  .testimonial-section{background:var(--enamel);color:var(--sand-light);}
-  .testimonial-section .section-head h2{color:var(--white);}
-  .testimonial-section .section-head p{color:#BFD0CA;}
-  .testimonial-section .eyebrow{color:var(--coral);}
-  .testimonial-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-  }
-  .testimonial-card{
-    background:rgba(255,255,255,0.06);
-    border:1px solid rgba(255,255,255,0.12);
-    border-radius:18px;
-    padding:28px;
-  }
-  .testimonial-card .stars{color:var(--coral);margin-bottom:14px;display:block;}
-  .testimonial-card p{
-    font-size:0.95rem;
-    color:#E4ECE9;
-    margin-bottom:18px;
-  }
-  .testimonial-card .who{
-    font-size:0.82rem;
-    font-weight:700;
-    color:var(--white);
-  }
-  .testimonial-card .who span{
-    display:block;
-    font-weight:400;
-    color:#9FB6AE;
-    font-size:0.78rem;
-    margin-top:2px;
-  }
-
-  /* ===== CTA FINAL ===== */
-  .final-cta{
-    background:var(--coral);
-    border-radius:28px;
-    padding:64px 50px;
-    text-align:center;
-    position:relative;
-    overflow:hidden;
-  }
-  .final-cta::before{
-    content:'';
-    position:absolute;
-    width:340px;height:340px;
-    background:radial-gradient(circle,rgba(255,255,255,0.16),transparent 70%);
-    top:-120px;right:-80px;
-  }
-  .final-cta h2{
-    color:var(--white);
-    font-size:clamp(1.8rem,3.4vw,2.5rem);
-    max-width:600px;
-    margin:0 auto;
-    line-height:1.15;
-    position:relative;
-  }
-  .final-cta p{
-    color:rgba(255,255,255,0.88);
-    margin-top:14px;
-    font-size:1rem;
-    position:relative;
-  }
-  .final-cta .btn-primary{
-    background:var(--white);
-    color:var(--coral-deep);
-    margin-top:30px;
-    box-shadow:0 14px 30px -10px rgba(0,0,0,0.25);
-    position:relative;
-  }
-  .final-cta .btn-primary:hover{background:var(--sand-light);}
-
-  /* ===== RODAPÉ ===== */
-  footer{
-    padding:48px 0 36px;
-  }
-  .footer-grid{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-end;
-    flex-wrap:wrap;
-    gap:24px;
-    border-top:1px solid var(--sand);
-    padding-top:32px;
-  }
-  footer .brand{font-size:1.1rem;}
-  footer .addr{
-    font-size:0.85rem;
-    color:#8A8074;
-    max-width:400px;
-    text-align:right;
-    line-height:1.6;
-  }
-  .whatsapp-float{
-    position:fixed;
-    bottom:24px;
-    right:24px;
-    z-index:60;
-    background:#25D366;
-    width:58px;height:58px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    box-shadow:0 10px 26px -8px rgba(37,211,102,0.6);
-    transition:transform .2s ease;
-  }
-  .whatsapp-float:hover{transform:scale(1.08);}
-  .whatsapp-float svg{width:28px;height:28px;}
-
-  @media (max-width:880px){
-    .hero-grid{grid-template-columns:1fr;gap:48px;}
-    .hero{padding:128px 0 70px;}
-    .transform-grid,.services-grid,.testimonial-grid{grid-template-columns:1fr;}
-    .about-section .wrap{grid-template-columns:1fr;}
-    .about-photo{max-width:320px;margin:0 auto;}
-    .final-cta{padding:48px 26px;}
-    .footer-grid{flex-direction:column;align-items:flex-start;}
-    .footer-grid .addr{text-align:left;}
-    .pill-1{right:10px;}
-  }
-</style>
-</head>
-<body>
-
-<div class="topbar">
-  <div class="wrap">
-    <div class="brand">
-      <svg class="brand-mark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5H6.5C5.84 5 5.28 5.42 5.08 6.01L3 12V20C3 20.55 3.45 21 4 21H5C5.55 21 6 20.55 6 20V19H18V20C18 20.55 18.45 21 19 21H20C20.55 21 21 20.55 21 20V12L18.92 6.01ZM6.85 7H17.14L18.22 10.14H5.77L6.85 7ZM19 17H5V13H19V17Z" fill="#1A2E40"/>
-        <circle cx="7.5" cy="15" r="1.5" fill="#1A2E40"/>
-        <circle cx="16.5" cy="15" r="1.5" fill="#1A2E40"/>
-      </svg>
-      CFC Modelo
-    </div>
-    <a href="https://wa.me/5584994076692" class="topbar-cta" target="_blank" rel="noopener">
-      Iniciar Matrícula
-    </a>
-  </div>
-</div>
-
-<section class="hero">
-  <div class="wrap">
-    <div class="hero-grid">
-      <div>
-        <div class="eyebrow">Formação de Condutores · Felipe Camarão, Natal</div>
-        <h1>Sua liberdade de<br>dirigir começa<em> aqui</em>.<br>Vamos conquistar.</h1>
-        <p class="lede">Habilitação de carro, moto e processos de trânsito simplificados com alta taxa de aprovação, no coração de Felipe Camarão.</p>
-        <div class="hero-actions">
-          <a href="https://wa.me/5584994076692" class="btn-primary" target="_blank" rel="noopener">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.6 1.4 5.1L2 22l5.1-1.3C8.5 21.5 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.5 0-3-.4-4.3-1.1l-.3-.2-3 .8.8-2.9-.2-.3C4.4 15 4 13.5 4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8z"/></svg>
-            Falar Conosco no WhatsApp
-          </a>
-          <a href="#servicos" class="btn-secondary">Nossos Serviços</a>
-        </div>
-        <div class="hero-trust">
-          <span class="stars">★★★★★</span>
-          <span>Centro de Formação Credenciado pelo Detran/RN</span>
-        </div>
-      </div>
-
-      <div class="smile-card">
-        <div class="smile-card-tag">Turma Recente</div>
-        <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=800&q=80" alt="Aluno aprovado no exame de trânsito">
-        <div class="smile-card-footer">
-          <div>
-            <div class="label">Processo</div>
-            <div class="value">Primeira CNH (A e B)</div>
-          </div>
-          <div style="text-align:right">
-            <div class="label">Formato</div>
-            <div class="value">Simples Nacional</div>
-          </div>
-        </div>
-        <div class="floating-pill pill-1"><span class="dot"></span> Próxima turma aberta</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="strip">
-  <div class="strip-inner">
-    <span>Primeira CNH</span><span>Categoria A (Moto)</span><span>Categoria B (Carro)</span><span>Adição de Categoria</span><span>Renovação de Habilitação</span><span>Reciclagem de Condutores</span>
-    <span>Primeira CNH</span><span>Categoria A (Moto)</span><span>Categoria B (Carro)</span><span>Adição de Categoria</span><span>Renovação de Habilitação</span><span>Reciclagem de Condutores</span>
-  </div>
-</div>
-
-<section class="transform-section section">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">Metodologia</div>
-      <h2>Estrutura focada no aprendizado seguro.</h2>
-      <p>Aprenda a pilotar e dirigir com veículos novos e suporte didático completo para garantir sua aprovação de forma ágil.</p>
-    </div>
-    <div class="transform-grid">
-      <div class="transform-card">
-        <div class="imgwrap">
-          <span class="badge">Aulas de Moto</span>
-          <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=600&q=80" alt="Treinamento de moto em pista">
-        </div>
-        <div class="caption">
-          <div class="proc">Circuito Categoria A</div>
-          <div class="meta">Controle total e percurso oficial</div>
-        </div>
-      </div>
-      <div class="transform-card">
-        <div class="imgwrap">
+    background: #0f1318;
+    color: var(--white);
+    padding: 16px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-top: 1px solid var(--borda);
