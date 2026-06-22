@@ -1,217 +1,194 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CFC Modelo | Autoescola Futurista em Natal</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg-dark: #06080a;
-    --bg-card: #0f1318;
-    --sinal-verde: #00E676; /* Verde farol aceso */
-    --sinal-amarelo: #FFD600; /* Amarelo atenção */
-    --sinal-laranja: #FF5252; /* Laranja cone de trânsito */
-    --texto-neon: #E0E6ED;
-    --borda: #1e252f;
-    --white: #FFFFFF;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CFC Modelo | Autoescola Futurista</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #080a0c;
+            --bg-card: #101419;
+            --sinal-verde: #00E676; 
+            --sinal-amarelo: #FFD600; 
+            --sinal-laranja: #FF5252; 
+            --texto: #E0E6ED;
+            --borda: #1e252f;
+            --white: #FFFFFF;
+        }
 
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            background-color: var(--bg-dark);
+            color: var(--texto);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+        }
 
-  body{
-    background:var(--bg-dark);
-    color:var(--texto-neon);
-    font-family:'Plus Jakarta Sans', sans-serif;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-    overflow-x:hidden;
-  }
+        h1, h2, h3 { font-family: 'Orbitron', sans-serif; font-weight: 700; color: var(--white); }
+        a { text-decoration: none; color: inherit; }
 
-  h1,h2,h3{
-    font-family:'Orbitron', sans-serif;
-    font-weight:700;
-    letter-spacing:1px;
-  }
+        .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
 
-  a{color:inherit;text-decoration:none;}
+        /* HEADER */
+        header {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(8, 10, 12, 0.9); backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--borda); padding: 16px 0;
+        }
+        header .wrap { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.4rem; font-family: 'Orbitron', sans-serif; font-weight: 900; }
+        .logo span { color: var(--sinal-amarelo); }
+        
+        .btn-header {
+            background: transparent; color: var(--sinal-verde); border: 1px solid var(--sinal-verde);
+            padding: 10px 20px; border-radius: 6px; font-weight: 700; cursor: pointer; transition: 0.3s;
+        }
+        .btn-header:hover { background: var(--sinal-verde); color: var(--bg-dark); }
 
-  /* ===== TOPO NEON ===== */
-  .topbar{
-    position:fixed;
-    top:0;left:0;right:0;
-    z-index:50;
-    background:rgba(6, 8, 10, 0.85);
-    backdrop-filter:blur(12px);
-    border-bottom:1px solid var(--borda);
-  }
-  .topbar .wrap{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:16px 28px;
-    max-width:1120px;
-    margin:0 auto;
-  }
-  .brand{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-family:'Orbitron', sans-serif;
-    font-weight:900;
-    font-size:1.4rem;
-    color:var(--white);
-    text-shadow: 0 0 10px rgba(0, 230, 118, 0.3);
-  }
-  .brand span{ color:var(--sinal-amarelo); }
-  .topbar-cta{
-    background:transparent;
-    color:var(--sinal-verde);
-    border: 1px solid var(--sinal-verde);
-    padding:10px 20px;
-    border-radius:8px;
-    font-size:0.85rem;
-    font-weight:700;
-    text-transform:uppercase;
-    letter-spacing:1px;
-    transition: 0.3s ease;
-    box-shadow: 0 0 15px rgba(0, 230, 118, 0.1);
-  }
-  .topbar-cta:hover{
-    background:var(--sinal-verde);
-    color:var(--bg-dark);
-    box-shadow: 0 0 20px rgba(0, 230, 118, 0.4);
-  }
+        /* HERO */
+        .hero { padding: 150px 0 80px; }
+        .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; }
+        .eyebrow { color: var(--sinal-amarelo); font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; margin-bottom: 16px; text-transform: uppercase; }
+        .hero h1 { font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.1; margin-bottom: 20px; }
+        .hero h1 em { color: var(--sinal-verde); font-style: normal; }
+        .hero p { color: #94a3b8; font-size: 1.05rem; margin-bottom: 32px; max-width: 480px; }
+        
+        .btn-principal {
+            background: var(--sinal-laranja); color: var(--white); padding: 16px 32px;
+            border-radius: 6px; font-weight: 700; display: inline-flex; align-items: center; gap: 10px;
+        }
 
-  /* ===== HERO FUTURISTA ===== */
-  .hero{
-    padding:160px 0 90px;
-    position:relative;
-  }
-  .wrap{
-    max-width:1120px;
-    margin:0 auto;
-    padding:0 28px;
-  }
-  .hero-grid{
-    display:grid;
-    grid-template-columns:1.1fr 0.9fr;
-    gap:56px;
-    align-items:center;
-  }
-  .eyebrow{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    font-size:0.75rem;
-    font-weight:700;
-    letter-spacing:0.15em;
-    text-transform:uppercase;
-    color:var(--sinal-amarelo);
-    margin-bottom:22px;
-  }
-  .hero h1{
-    font-size:clamp(2.2rem, 4.5vw, 3.4rem);
-    line-height:1.1;
-    color:var(--white);
-  }
-  .hero h1 em{
-    font-style:normal;
-    color:var(--sinal-verde);
-    text-shadow: 0 0 15px rgba(0, 230, 118, 0.3);
-  }
-  .hero p.lede{
-    font-size:1.05rem;
-    color:#94a3b8;
-    max-width:480px;
-    margin-top:22px;
-  }
-  .hero-actions{
-    margin-top:34px;
-    display:flex;
-    gap:16px;
-    flex-wrap:wrap;
-  }
-  .btn-primary{
-    background:var(--sinal-laranja);
-    color:var(--white);
-    padding:16px 28px;
-    border-radius:8px;
-    font-weight:700;
-    text-transform:uppercase;
-    font-size:0.9rem;
-    letter-spacing:1px;
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    box-shadow:0 0 20px rgba(232,99,75,0.3);
-    transition: 0.2s ease;
-  }
-  .btn-primary:hover{
-    transform:translateY(-2px);
-    box-shadow:0 0 25px rgba(232,99,75,0.5);
-  }
-  .btn-secondary{
-    border:1px solid var(--borda);
-    color:var(--white);
-    padding:15px 26px;
-    border-radius:8px;
-    font-weight:600;
-    font-size:0.95rem;
-    background: rgba(255,255,255,0.02);
-  }
+        .painel-hud { background: var(--bg-card); border: 1px solid var(--borda); border-radius: 16px; padding: 24px; text-align: center; }
+        .painel-hud img { width: 100%; border-radius: 8px; margin-bottom: 16px; height: 220px; object-fit: cover; }
+        .hud-footer { display: flex; justify-content: space-between; font-size: 0.85rem; color: #64748b; }
+        .hud-footer strong { color: var(--sinal-amarelo); font-family: 'Orbitron', sans-serif; display: block; font-size: 1rem; margin-top: 4px; }
 
-  /* PAINEL HUD CYBER */
-  .cyber-panel{
-    background:var(--bg-card);
-    border:1px solid var(--borda);
-    border-radius:18px;
-    padding:26px;
-    position:relative;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-  }
-  .cyber-panel::before {
-    content: 'SYSTEM ACTIVE';
-    position: absolute;
-    top: 12px; right: 20px;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.65rem;
-    color: var(--sinal-verde);
-    letter-spacing: 1px;
-  }
-  .cyber-panel img{
-    border-radius:10px;
-    width:100%;
-    aspect-ratio:4/3;
-    object-fit:cover;
-    border: 1px solid #2d3748;
-  }
-  .panel-footer{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-top:20px;
-  }
-  .panel-footer .label{
-    font-size:0.7rem;
-    color:#64748b;
-    text-transform:uppercase;
-    letter-spacing:0.1em;
-  }
-  .panel-footer .value{
-    font-family:'Orbitron', sans-serif;
-    font-size:1.1rem;
-    color:var(--sinal-amarelo);
-  }
+        /* CHATBOT IA (ESQUERDA) */
+        .ia-container { position: fixed; bottom: 24px; left: 24px; z-index: 1000; }
+        .ia-btn { background: var(--bg-card); border: 1px solid var(--sinal-verde); color: var(--sinal-verde); width: 60px; height: 60px; border-radius: 50%; cursor: pointer; font-size: 24px; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 15px rgba(0,230,118,0.2); }
+        
+        .ia-box { display: none; position: absolute; bottom: 75px; left: 0; width: 300px; height: 380px; background: var(--bg-card); border: 1px solid var(--borda); border-radius: 12px; flex-direction: column; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+        .ia-header { background: #161f2a; padding: 12px; font-family: 'Orbitron', sans-serif; font-size: 0.8rem; color: var(--sinal-verde); border-bottom: 1px solid var(--borda); }
+        .ia-chat { flex: 1; padding: 12px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; font-size: 0.85rem; }
+        .msg { padding: 8px 12px; border-radius: 8px; max-width: 85%; }
+        .msg.bot { background: #161f2a; color: var(--texto); align-self: flex-start; }
+        .msg.user { background: var(--sinal-verde); color: var(--bg-dark); align-self: flex-end; font-weight: 600; }
+        .ia-input { display: flex; border-top: 1px solid var(--borda); }
+        .ia-input input { flex: 1; background: var(--bg-dark); border: none; padding: 12px; color: white; outline: none; }
+        .ia-input button { background: #161f2a; border: none; color: var(--sinal-verde); padding: 0 16px; cursor: pointer; font-weight: bold; }
 
-  /* ===== STRIP / MARQUEE ===== */
-  .strip{
-    background: #0f1318;
-    color: var(--white);
-    padding: 16px 0;
-    overflow: hidden;
-    white-space: nowrap;
-    border-top: 1px solid var(--borda);
+        /* WHATSAPP (DIREITA) */
+        .wp-btn { position: fixed; bottom: 24px; right: 24px; z-index: 1000; background: #25D366; width: 58px; height: 58px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 15px rgba(37,211,102,0.3); }
+
+        footer { background: var(--bg-dark); padding: 40px 0; border-top: 1px solid var(--borda); font-size: 0.85rem; color: #64748b; margin-top: 60px; }
+        .footer-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+
+        @media (max-width: 768px) {
+            .hero-grid { grid-template-columns: 1fr; }
+            .footer-grid { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="wrap">
+            <div class="logo">CFC <span>MODELO</span></div>
+            <a href="https://wa.me/5584994076692" target="_blank" class="btn-header">Matrícula Online</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="wrap">
+            <div class="hero-grid">
+                <div>
+                    <div class="eyebrow">// Sinal Verde para sua CNH</div>
+                    <h1>Pilote o seu amanhã.<br>Habilitação com<br>tecnologia <em>CFC</em>.</h1>
+                    <p>Cronogramas automatizados, frota moderna e suporte inteligente em Felipe Camarão para você conquistar sua carteira de motorista sem burocracia.</p>
+                    <a href="https://wa.me/5584994076692" target="_blank" class="btn-primary">Iniciar Processo</a>
+                </div>
+
+                <div class="painel-hud">
+                    <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=800&q=80" alt="Carro Autoescola">
+                    <div class="hud-footer">
+                        <div>CATEGORIA<br><strong>A e B (Carro/Moto)</strong></div>
+                        <div style="text-align: right;">LOCALIZAÇÃO<br><strong>Felipe Camarão</strong></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="ia-container">
+        <button class="ia-btn" onclick="toggleChat()">🤖</button>
+        <div class="ia-box" id="iaBox">
+            <div class="ia-header">// CHATBOT MODELO INTELLIGENCE</div>
+            <div class="ia-chat" id="iaChat">
+                <div class="msg bot">Olá! Sou a IA do CFC Modelo. Pergunte sobre "documentos", "vagas", "endereço" ou "valores".</div>
+            </div>
+            <div class="ia-input">
+                <input type="text" id="iaIn" placeholder="Digite sua dúvida..." onkeypress="if(event.key==='Enter')falarIA()">
+                <button onclick="falarIA()">></button>
+            </div>
+        </div>
+    </div>
+
+    <a href="https://wa.me/5584994076692" target="_blank" class="wp-btn">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.6 1.4 5.1L2 22l5.1-1.3C8.5 21.5 10.2 22 12 22c5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18c-1.5 0-3-.4-4.3-1.1l-.3-.2-3 .8.8-2.9-.2-.3C4.4 15 4 13.5 4 12c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8z"/></svg>
+    </a>
+
+    <footer>
+        <div class="wrap">
+            <div class="footer-grid">
+                <div>
+                    <h3 style="font-size: 1rem; margin-bottom: 6px;">CFC MODELO</h3>
+                    <p>CENTRO DE FORMACAO DE CONDUTORES MODELO FELIPE CAMARAO LTDA</p>
+                </div>
+                <div style="line-height: 1.6;">
+                    Rua Joaquim de Castro, 390 — Felipe Camarão<br>
+                    Natal/RN — CEP: 59074-350<br>
+                    Suporte: (84) 99407-6692
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleChat() {
+            var b = document.getElementById('iaBox');
+            b.style.display = (b.style.display === 'flex') ? 'none' : 'flex';
+        }
+
+        function falarIA() {
+            var input = document.getElementById('iaIn');
+            var txt = input.value.trim().toLowerCase();
+            if(!txt) return;
+
+            var chat = document.getElementById('iaChat');
+            chat.innerHTML += '<div class="msg user">' + input.value + '</div>';
+            input.value = '';
+            chat.scrollTop = chat.scrollHeight;
+
+            setTimeout(function() {
+                var resp = "Entendi! Para detalhes específicos, clique no ícone do WhatsApp no canto direito para falar com a nossa central.";
+                if(txt.includes('documento') || txt.includes('precisa')) {
+                    resp = "Para iniciar no CFC Modelo você precisa trazer: RG, CPF e Comprovante de Residência de Natal.";
+                } else if(txt.includes('vaga') || txt.includes('turma')) {
+                    resp = "Temos vagas e novas turmas teóricas iniciando esta semana em Felipe Camarão! Garanta sua vaga pelo WhatsApp.";
+                } else if(txt.includes('onde fica') || txt.includes('endereço') || txt.includes('rua')) {
+                    resp = "Estamos localizados na Rua Joaquim de Castro, nº 390, no bairro Felipe Camarão, Natal/RN.";
+                } else if(txt.includes('valor') || txt.includes('preço') || txt.includes('quanto')) {
+                    resp = "Temos pacotes promocionais para carro e moto com parcelamento facilitado! Consulte a tabela atualizada no nosso WhatsApp.";
+                }
+                chat.innerHTML += '<div class="msg bot">' + resp + '</div>';
+                chat.scrollTop = chat.scrollHeight;
+            }, 500);
+        }
+    </script>
+</body>
+</html>
